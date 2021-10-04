@@ -1,0 +1,7 @@
+F:\Новая папка\програмирование\vvv\Classes\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+F:\Новая папка\програмирование\vvv\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+F:\Новая папка\програмирование\vvv\Classes\Classes\bin\Debug\Classes.exe.config
+F:\Новая папка\програмирование\vvv\Classes\Classes\bin\Debug\Classes.exe
+F:\Новая папка\програмирование\vvv\Classes\Classes\bin\Debug\Classes.pdb
+F:\Новая папка\програмирование\vvv\Classes\Classes\obj\Debug\Classes.exe
+F:\Новая папка\програмирование\vvv\Classes\Classes\obj\Debug\Classes.pdb
