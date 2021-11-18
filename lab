@@ -1,0 +1,138 @@
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+
+    {
+        public enum Type
+        {
+
+            Bad,
+            Simple, 
+            Good, 
+            Excellent
+        }
+        private List<Human> Human_List = new List<Human> { };
+        private List<Student> Student_List = new List<Student> { };
+        private List<Teacher> Teacher_List = new List<Teacher> { };
+        public int counter = 0;
+
+        public void Human_add()
+        {
+            Human human1 = new Human("Nile", "Ster", 17, "male", new Addres( "Ukraine", "Kyiv", "Vorontsova"));
+            Human human2 = new Human("Sofi", "Nime", 18, "female", new Addres("Ukraine", "Dnipro", "Central"));
+            Human human3 = new Human("Sam", "Ster", 17, "male", new Addres("Ukraine", "Lviv", "Stepanska"));
+            Human_List.Add(human1);
+            Human_List.Add(human2);
+            Human_List.Add(human3);
+            
+
+        }
+        public void Student_Add()
+        {
+            Student s1 = new Student();
+            Student s2 = new Student();
+            Student s3 = new Student();
+            Student_List.Add(s1);
+            Student_List.Add(s2);
+            Student_List.Add(s3);
+        }
+
+        public void Teacher_Add()
+        {
+            Teacher t1 = new Teacher("Doll");
+            Teacher t2 = new Teacher("Minor");
+            Teacher t3 = new Teacher("Tern");
+            Teacher_List.Add(t1);
+            Teacher_List.Add(t2);
+            Teacher_List.Add(t3);
+
+        }
+        public Form1()
+        {
+            InitializeComponent();
+            
+              
+            
+        }
+        public void DataTable()
+
+        {
+            DataTable Table = new DataTable();
+            DataColumn Name = new DataColumn("Name");
+            DataColumn Surname = new DataColumn("Surname");
+            DataColumn Age = new DataColumn("Age");
+            DataColumn Gender = new DataColumn("Gender");
+            DataColumn Country = new DataColumn("Country");
+            DataColumn District = new DataColumn("District");
+            DataColumn Street = new DataColumn("Street");
+
+
+
+            
+            Table.Columns.Add(Name);
+            Table.Columns.Add(Surname);
+            Table.Columns.Add(Age);
+            Table.Columns.Add(Gender);
+            Table.Columns.Add(Country);
+            Table.Columns.Add(District);
+            Table.Columns.Add(Street);
+            Human_add();
+            int Counter = Human_List.Count;
+            int i = 0;
+            while (i<Counter)
+            {
+               
+                Table.Rows.Add(Human_List[i].Name, Human_List[i].Surname, Human_List[i].Age, Human_List[i].Gender, Human_List[i].Address.Country, Human_List[i].Address.District, Human_List[i].Address.Street);
+                i++;
+
+            }
+            this.dataGridView1.DataSource = Table;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DataTable();
+            Chart();
+            TreeViev();
+        }
+        private void Chart()
+        {
+            for(int i=0; i<Human_List.Count; i++)
+            {
+                this.chart1.Series["Age"].Points.AddXY(Human_List[i].Name, Human_List[i].Age);
+            }
+        }
+
+        private void TreeViev()
+        {
+            treeView1.BeginUpdate();
+            TreeNode listTeachers = new TreeNode();
+            listTeachers.Name = "list teachers";
+            listTeachers.Text = "Teacher list";
+            treeView1.Nodes.Add(listTeachers);
+
+            try
+            {
+                treeView1.Nodes[0].Nodes.Add("Teacher", "Teacher");
+                treeView1.Nodes[1].Nodes.Add("name", "name");
+            }
+            catch
+            {
+
+            }
+           /* foreach (Teacher teacher in Teacher_List)
+            {
+                int i = 0;
+                treeView1.Nodes[0].Nodes[i].Nodes.Add(Teacher_List[i].Surname);
+                i++;
+                
+            }
+           */
+           
+            treeView1.EndUpdate();
+
+        }
+
+    }
+}
