@@ -6,71 +6,26 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-  
-    
-        class Human
+        public class Human
         {
-            public string name;
-            public string surname;
-            public int age;
-            public string gender;
-            public Addres address;
+            public string Name { get; set; }
+            public string Surname { get; set; }
+            public int Age { get; set; }
+            public string Gender { get; set; }
+            public Addres Address { get; set; }
 
-            public Human(string Name,string Surname, int Age, string Gender, Addres Address)
+            public Human(string name,string surname, int age, string gender, Addres address)
             {
-                name = Name;
-                surname = Surname;
-                age = Age;
-                gender = Gender;
-                address = Address;
+                Name = name;
+                Surname = surname;
+                this.Age = age;
+                Gender = gender;
+                Address = address;
             }
-            public string Name
-            {
-                get { return name; }
-                set { name = value; }
-
-            }
-            public string Surname
-            {
-                get { return surname; }
-                set { surname = value; }
-
-            }
-            public int Age
-            {
-                get
-                {
-                    return age;
-                }
-                set
-                {
-                    age = value;
-                }
-
-            }
-            public string Gender
-            {
-                get
-                {
-                    return gender;
-                }
-                set
-                {
-                    gender = value;
-                }
-            }
-            public Addres Address
-            {
-                get
-                {
-                    return address;
-                }
-                set
-                {
-                    address = value;
-                }
-
-            }
+           
+            
+            
+            
 
            /* public string InputName()
             {

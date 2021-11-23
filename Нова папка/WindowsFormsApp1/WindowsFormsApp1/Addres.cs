@@ -6,51 +6,18 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class Addres
+    public class Addres
     {
-        public string country;
-        public string district;
-        public string street;
-        public Addres(string newCountry, string newDistrict, string newStreet)
+        public string Country { get; set; }
+        public string District { get; set; }
+        public string Street { get; set; }
+        public Addres(string country, string district, string street)
         {
-            country = newCountry;
-            district = newDistrict;
-            street = newStreet;
+            Country = country;
+            District = district;
+            Street = street;
         }
-        public string Country
-        {
-            get
-            {
-                return country;
-            }
-            set
-            {
-                country = value;
-            }
-        }
-        public string District
-        {
-            get
-            {
-                return district;
-            }
-            set
-            {
-                district = value;
-            }
-        }
-        public string Street
-        {
-            get
-            {
-                return street;
-            }
-            set
-            {
-                street = value;
-            }
-        }
-
+       
         /*public Addres()
         {
             Console.Write("Country: ");
